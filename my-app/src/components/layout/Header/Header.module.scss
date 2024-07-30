@@ -1,0 +1,105 @@
+.header {
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(244, 244, 244, 1);
+  padding: 15px 370px;
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    &_work {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16.41px;
+        text-align: left;
+      }
+    }
+  }
+
+  &__address {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 16.41px;
+      text-align: left;
+    }
+  }
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &_phone {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 16.41px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    &_auth {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14.06px;
+      text-align: left;
+      cursor: pointer;
+
+      &:visited {
+        color: rgba(127, 173, 57, 1);
+      }
+    }
+  }
+}
+.nav {
+  max-width: 1920px;
+  background: rgba(127, 173, 57, 1);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 25px 370px;
+
+  &__cart {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+
+    &_icon {
+      cursor: pointer;
+    }
+
+    &_count {
+      background-color: white;
+      padding: 5px;
+      color: black;
+      border-radius: 10px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    padding-top: 5px;
+    gap: 39px;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 18.75px;
+
+    &_link {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
