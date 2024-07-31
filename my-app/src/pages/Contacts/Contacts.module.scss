@@ -1,0 +1,52 @@
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 32.81px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding-top: 70px;
+}
+.contacts {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 50px 370px;
+  display: flex;
+
+  &__map {
+    margin-left: 170px;
+
+    &_info {
+      margin-top: 30px;
+      padding-left: 30px;
+      font-size: 20.52px;
+      font-weight: 400;
+      line-height: 24.04px;
+      text-align: left;
+    }
+  }
+
+  &__type {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: left;
+    gap: 30px;
+
+    &_info {
+      p {
+        margin-left: 25px;
+        max-width: 450px;
+      }
+    }
+
+    &_list {
+      font-size: 20.52px;
+      font-weight: 400;
+      line-height: 24.04px;
+      text-align: left;
+      padding-left: 90px;
+    }
+  }
+}

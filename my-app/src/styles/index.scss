@@ -90,6 +90,10 @@ video {
 
 a {
   text-decoration: none;
+
+  &:hover {
+    color: rgba(127, 173, 57, 1);
+  }
 }
 
 article,
@@ -108,8 +112,7 @@ section {
 body {
   line-height: 1;
 }
-ol,
-ul {
+ol {
   list-style: none;
 }
 blockquote,
