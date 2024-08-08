@@ -60,30 +60,6 @@
     &_call {
       display: flex;
       justify-content: end;
-
-      button {
-        background: linear-gradient(
-          75.29deg,
-          #7fad39 3.78%,
-          #b1d17f 52.27%,
-          #7fad39 103.26%
-        );
-        font-size: 20.17px;
-        font-weight: 800;
-        line-height: 23.64px;
-        letter-spacing: 0.05em;
-        text-align: center;
-        color: white;
-        padding: 12px 26px;
-        border-radius: 10px;
-        border: none;
-        cursor: pointer;
-        transition: opacity 0.5s;
-
-        &:hover {
-          opacity: 0.7;
-        }
-      }
     }
   }
 }

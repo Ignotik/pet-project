@@ -1,0 +1,20 @@
+.advantagesContainer {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 370px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 28.13px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.card__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px 60px;
+}

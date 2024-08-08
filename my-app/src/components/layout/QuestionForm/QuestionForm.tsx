@@ -1,6 +1,7 @@
 import { FC } from "react";
 import styles from "./QuestionForm.module.scss";
 import { Link } from "react-router-dom";
+import Button from "../../Button/Button";
 
 const QuestionForm: FC = () => {
   return (
@@ -67,9 +68,7 @@ const QuestionForm: FC = () => {
                 </linearGradient>
               </defs>
             </svg>
-            <button className={styles.QuestionForm__content_button}>
-              отправить
-            </button>
+            <Button title="отправить" />
           </div>
         </div>
       </div>

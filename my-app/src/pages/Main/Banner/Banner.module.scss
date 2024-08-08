@@ -1,0 +1,77 @@
+.banner {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-image: url("../../../assets/images/bg-banner.png");
+  background-repeat: no-repeat;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 145px 600px 31px;
+    gap: 20px;
+
+    &_inner {
+      display: flex;
+      gap: 20px;
+      flex-direction: row;
+      margin-bottom: 80px;
+    }
+
+    &_title {
+      font-family: Montserrat;
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 58.51px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &_description {
+      font-family: Montserrat;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 34.13px;
+      text-align: center;
+      color: rgba(9, 66, 0, 1);
+    }
+
+    &_arrow {
+      position: absolute;
+      top: 13px;
+      padding-left: 10px;
+      color: white;
+    }
+
+    &_link {
+      padding: 12px 60px;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 21.09px;
+      letter-spacing: 0.05em;
+      text-align: center;
+      background: rgba(127, 173, 57, 1);
+      position: relative;
+      border-radius: 10px;
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+
+    &_text {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 29.26px;
+      text-align: center;
+    }
+
+    &_socials {
+      display: flex;
+      gap: 40px;
+      color: white;
+    }
+  }
+}

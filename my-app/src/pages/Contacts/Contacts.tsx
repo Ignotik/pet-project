@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./Contacts.module.scss";
-import map from "../../assets/map.png";
+import map from "../../assets/images/map.png";
 
 type Contact = {
   id: number;

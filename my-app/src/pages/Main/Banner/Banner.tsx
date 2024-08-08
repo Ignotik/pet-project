@@ -1,74 +1,30 @@
-import Button from "../../Button/Button";
-import styles from "./Footer.module.scss";
+import React from "react";
+import styles from "./Banner.module.scss";
 import { Link } from "react-router-dom";
-const Footer: React.FC = () => {
+import Button from "../../../components/Button/Button";
+import { IoIosArrowForward } from "react-icons/io";
+
+const Banner: React.FC = () => {
   return (
-    <footer className={styles.footer}>
-      <ul className={styles.footer__list}>
-        <li className={styles.footer__list_nav}>
-          <Link to="/">Главная</Link>
-        </li>
-        <li className={styles.footer__list_nav}>
-          <Link to="/catalog">Каталог</Link>
-        </li>
-        <li className={styles.footer__list_nav}>
-          <Link to="/contacts">Контакты</Link>
-        </li>
-        <li className={styles.footer__list_nav}>
-          <Link to="/about">О нас</Link>
-        </li>
-      </ul>
-      <ul className={styles.footer__list}>
-        <li className={styles.footer__list_catalog}>
-          <Link to="/rubble">Щебень</Link>
-        </li>
-        <li className={styles.footer__list_catalog}>
-          <Link to="/sand">Песок</Link>
-        </li>
-        <li className={styles.footer__list_catalog}>
-          <Link to="/cement">Цемент</Link>
-        </li>
-        <li className={styles.footer__list_catalog}>
-          <Link to="/coal">Уголь</Link>
-        </li>
-        <li className={styles.footer__list_catalog}>
-          <Link to="/lumber">Пиломатериалы</Link>
-        </li>
-      </ul>
-      <ul className={styles.footer__list}>
-        <li className={styles.footer__list_address}>
-          <p>101000, г. Москва, ул. Мясницкая 24/7, стр. 3, этаж 3, оф. 322</p>
-          <svg
-            width="26"
-            height="36"
-            viewBox="0 0 26 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.0208 17.1978C11.8805 17.1978 10.787 16.7448 9.98068 15.9385C9.1744 15.1322 8.72144 14.0387 8.72144 12.8984C8.72144 11.7582 9.1744 10.6646 9.98068 9.85837C10.787 9.05209 11.8805 8.59913 13.0208 8.59913C14.161 8.59913 15.2546 9.05209 16.0608 9.85837C16.8671 10.6646 17.3201 11.7582 17.3201 12.8984C17.3201 13.463 17.2089 14.0221 16.9928 14.5437C16.7767 15.0653 16.4601 15.5393 16.0608 15.9385C15.6616 16.3378 15.1877 16.6544 14.666 16.8705C14.1444 17.0866 13.5854 17.1978 13.0208 17.1978ZM13.0208 0.860352C9.82806 0.860352 6.76612 2.12865 4.50854 4.38623C2.25096 6.64381 0.982666 9.70574 0.982666 12.8984C0.982666 21.927 13.0208 35.2549 13.0208 35.2549C13.0208 35.2549 25.0588 21.927 25.0588 12.8984C25.0588 9.70574 23.7906 6.64381 21.533 4.38623C19.2754 2.12865 16.2135 0.860352 13.0208 0.860352Z"
-              fill="#272E28"
-            />
-          </svg>
-        </li>
-        <li className={styles.footer__list_phone}>
-          <span>+7 988 289 2387</span>
-          <svg
-            width="26"
-            height="26"
-            viewBox="0 0 26 26"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M19.0624 25.4935C17.2433 25.4266 12.0879 24.7142 6.68866 19.3174C1.29071 13.9193 0.579493 8.76619 0.511276 6.94619C0.410215 4.17262 2.53503 1.47862 4.98956 0.426536C5.28514 0.29893 5.60882 0.250347 5.92884 0.285553C6.24887 0.32076 6.55424 0.438546 6.81499 0.627355C8.83622 2.10002 10.2309 4.32797 11.4284 6.07977C11.6919 6.46465 11.8046 6.93299 11.745 7.39557C11.6853 7.85815 11.4576 8.28262 11.1051 8.58811L8.64041 10.4182C8.52134 10.5042 8.43752 10.6304 8.40453 10.7735C8.37154 10.9166 8.39161 11.0668 8.46103 11.1962C9.01939 12.2104 10.0123 13.721 11.1493 14.8577C12.2875 15.9944 13.8691 17.0528 14.9542 17.6742C15.0903 17.7506 15.2504 17.7719 15.4017 17.7339C15.5531 17.6958 15.684 17.6012 15.7678 17.4696L17.3721 15.0282C17.6671 14.6365 18.1022 14.374 18.5863 14.2959C19.0705 14.2177 19.5661 14.3299 19.9694 14.6089C21.7468 15.839 23.8211 17.2094 25.3396 19.1532C25.5437 19.4158 25.6736 19.7284 25.7156 20.0583C25.7576 20.3882 25.7102 20.7234 25.5783 21.0288C24.521 23.4954 21.8454 25.5958 19.0624 25.4935Z"
-              fill="#272E28"
-            />
-          </svg>
-        </li>
-        <li className={styles.footer__list_socials}>
+    <div className={styles.banner}>
+      <div className={styles.banner__container}>
+        <h2 className={styles.banner__container_title}>
+          Пиломатериалы Уголь Щебень Цемент Песок
+        </h2>
+        <p className={styles.banner__container_description}>
+          в Ленинске-Кузнецком с доставкой
+        </p>
+        <div className={styles.banner__container_inner}>
+          <Link className={styles.banner__container_link} to="/catalog">
+            в каталог
+            <IoIosArrowForward className={styles.banner__container_arrow} />
+          </Link>
+          <Button title="Заказать звонок" />
+        </div>
+        <p className={styles.banner__container_text}>
+          или связаться с нами через соц. сети
+        </p>
+        <div className={styles.banner__container_socials}>
           <Link to="https://vk.com/sheeshhhhzz">
             <svg
               width="26"
@@ -111,13 +67,10 @@ const Footer: React.FC = () => {
               />
             </svg>
           </Link>
-        </li>
-        <li className={styles.footer__list_call}>
-          <Button title="Заказать звонок" />
-        </li>
-      </ul>
-    </footer>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default Footer;
+export default Banner;
