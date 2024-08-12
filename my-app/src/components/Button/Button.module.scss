@@ -1,10 +1,4 @@
 .button {
-  background: linear-gradient(
-    75.29deg,
-    #7fad39 3.78%,
-    #b1d17f 52.27%,
-    #7fad39 103.26%
-  );
   font-size: 20.17px;
   font-weight: 800;
   line-height: 23.64px;
@@ -20,4 +14,50 @@
   &:hover {
     opacity: 0.8;
   }
+}
+
+.orange {
+  background: linear-gradient(
+    260.41deg,
+    #cc7b1a 19.86%,
+    #eec492 49.41%,
+    #cc7b1a 78.18%
+  );
+}
+
+.green {
+  background: linear-gradient(
+    75.29deg,
+    #7fad39 3.78%,
+    #b1d17f 52.27%,
+    #7fad39 103.26%
+  );
+}
+
+.black {
+  background: linear-gradient(
+    260.53deg,
+    #242424 16.51%,
+    #303030 37.52%,
+    #4b4b4b 54.92%,
+    #2f2f2f 72.57%,
+    #242424 92.38%
+  );
+}
+
+.red {
+  background: linear-gradient(
+    257.02deg,
+    #bf6f3f 26.38%,
+    #eca072 51.2%,
+    #bf6f3f 75.9%
+  );
+}
+
+.full {
+  width: 100%;
+}
+
+.block {
+  display: block;
 }

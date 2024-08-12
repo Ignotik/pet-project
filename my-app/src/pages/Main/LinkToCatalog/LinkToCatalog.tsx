@@ -12,7 +12,7 @@ const LinkToCatalog: FC = () => {
     <div className={styles.container}>
       <ul className={styles.container_list}>
         <li className={styles.container_link1}>
-          <Link to="/lumber">
+          <Link to="/lamber">
             <img src={pilo} alt="пиломатериалы" />
           </Link>
         </li>
@@ -22,7 +22,7 @@ const LinkToCatalog: FC = () => {
           </Link>
         </li>
         <li className={styles.container_link3}>
-          <Link to="/rubble">
+          <Link to="/sand">
             <img src={cheb} alt="щебень" />
           </Link>
         </li>
@@ -32,7 +32,7 @@ const LinkToCatalog: FC = () => {
           </Link>
         </li>
         <li className={styles.container_link5}>
-          <Link to="/cement">
+          <Link to="/sand">
             <img src={chem} alt="цемент" />
           </Link>
         </li>

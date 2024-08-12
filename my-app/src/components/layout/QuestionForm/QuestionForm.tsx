@@ -3,7 +3,12 @@ import styles from "./QuestionForm.module.scss";
 import { Link } from "react-router-dom";
 import Button from "../../Button/Button";
 
-const QuestionForm: FC = () => {
+type QuestionFormProps = {
+  color: string;
+  width: string;
+};
+
+const QuestionForm: FC<QuestionFormProps> = ({ color, width }) => {
   return (
     <div className={styles.QuestionForm}>
       <div className={styles.QuestionForm__content}>
@@ -41,6 +46,7 @@ const QuestionForm: FC = () => {
           </form>
           <div className={styles.QuestionForm__content_callcenter}>
             <svg
+              className={styles[color]}
               width="303"
               height="212"
               viewBox="0 0 303 212"
@@ -68,7 +74,7 @@ const QuestionForm: FC = () => {
                 </linearGradient>
               </defs>
             </svg>
-            <Button title="отправить" />
+            <Button width={width} title="отправить" color={color} />
           </div>
         </div>
       </div>

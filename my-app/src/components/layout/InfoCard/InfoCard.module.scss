@@ -1,8 +1,9 @@
 .card {
+  max-height: 206px;
   max-width: 326px;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 47px 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -15,6 +16,11 @@
 
 .orange {
   border: 1px solid rgba(115, 115, 115, 1);
+  filter: hue-rotate(307deg);
+}
+
+.red {
+  border: 1px solid rgba(115, 115, 115, 1);
   filter: hue-rotate(-60deg);
 }
 
@@ -24,7 +30,7 @@
 
 .black {
   border: 1px solid rgba(115, 115, 115, 1);
-  filter: grayscale(1);
+  filter: brightness(0%);
 }
 
 .content {

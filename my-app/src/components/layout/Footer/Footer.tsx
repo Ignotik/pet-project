@@ -1,38 +1,61 @@
 import Button from "../../Button/Button";
 import styles from "./Footer.module.scss";
 import { Link } from "react-router-dom";
-const Footer: React.FC = () => {
+
+type FooterProps = {
+  color: string;
+};
+
+const Footer: React.FC<FooterProps> = ({ color }) => {
   return (
     <footer className={styles.footer}>
       <ul className={styles.footer__list}>
         <li className={styles.footer__list_nav}>
-          <Link to="/">Главная</Link>
+          <Link className={styles[color]} to="/">
+            Главная
+          </Link>
         </li>
         <li className={styles.footer__list_nav}>
-          <Link to="/catalog">Каталог</Link>
+          <Link className={styles[color]} to="/catalog">
+            Каталог
+          </Link>
         </li>
         <li className={styles.footer__list_nav}>
-          <Link to="/contacts">Контакты</Link>
+          <Link className={styles[color]} to="/contacts">
+            Контакты
+          </Link>
         </li>
         <li className={styles.footer__list_nav}>
-          <Link to="/about">О нас</Link>
+          <Link className={styles[color]} to="/about">
+            О нас
+          </Link>
         </li>
       </ul>
       <ul className={styles.footer__list}>
         <li className={styles.footer__list_catalog}>
-          <Link to="/rubble">Щебень</Link>
+          <Link className={styles[color]} to="/rubble">
+            Щебень
+          </Link>
         </li>
         <li className={styles.footer__list_catalog}>
-          <Link to="/sand">Песок</Link>
+          <Link className={styles[color]} to="/sand">
+            Песок
+          </Link>
         </li>
         <li className={styles.footer__list_catalog}>
-          <Link to="/cement">Цемент</Link>
+          <Link className={styles[color]} to="/cement">
+            Цемент
+          </Link>
         </li>
         <li className={styles.footer__list_catalog}>
-          <Link to="/coal">Уголь</Link>
+          <Link className={styles[color]} to="/coal">
+            Уголь
+          </Link>
         </li>
         <li className={styles.footer__list_catalog}>
-          <Link to="/lumber">Пиломатериалы</Link>
+          <Link className={styles[color]} to="/lumber">
+            Пиломатериалы
+          </Link>
         </li>
       </ul>
       <ul className={styles.footer__list}>
@@ -113,7 +136,7 @@ const Footer: React.FC = () => {
           </Link>
         </li>
         <li className={styles.footer__list_call}>
-          <Button title="Заказать звонок" />
+          <Button width="block" color={color} title="Заказать звонок" />
         </li>
       </ul>
     </footer>

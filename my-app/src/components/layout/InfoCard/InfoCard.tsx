@@ -15,12 +15,12 @@ const InfoCard: FC<InfoCardProps> = ({ description, img, color }) => {
   });
 
   return (
-    <div className={cardClass}>
+    <section className={cardClass}>
       <div className={styles.content}>
         <img className={styles.image} src={img} alt="Картинка" />
         <p className={styles.description}>{description}</p>
       </div>
-    </div>
+    </section>
   );
 };
 

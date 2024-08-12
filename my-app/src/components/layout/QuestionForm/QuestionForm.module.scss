@@ -32,6 +32,7 @@
 .QuestionForm {
   max-width: 1920px;
   margin: 0 auto;
+  margin-top: 100px;
 
   &__content {
     background: rgba(255, 255, 255, 1);
@@ -82,4 +83,15 @@
       }
     }
   }
+}
+.black {
+  filter: brightness(0%);
+}
+
+.orange {
+  filter: hue-rotate(307deg);
+}
+
+.red {
+  filter: hue-rotate(-60deg);
 }

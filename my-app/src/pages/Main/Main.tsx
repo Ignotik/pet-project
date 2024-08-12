@@ -6,7 +6,6 @@ import Contacts from "../Contacts/Contacts";
 import About from "../About/About";
 import Advantages from "../../components/layout/Advantages/Advantages";
 import { imageInfo } from "../../utils/consts/consts"; // Assuming imageInfo is correctly imported
-import Stocks from "./Stocks/Stocks";
 
 const Main: React.FC = () => {
   return (
@@ -14,9 +13,8 @@ const Main: React.FC = () => {
       <Banner />
       <LinkToCatalog />
       <Advantages color="green" imageInfo={imageInfo} />
-      <Stocks />
       <About />
-      <QuestionForm />
+      <QuestionForm width="full" color="green" />
       <Contacts />
     </>
   );

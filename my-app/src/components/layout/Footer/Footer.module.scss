@@ -16,10 +16,40 @@
 
     &_nav {
       font-weight: 800;
+
+      a {
+        &:hover {
+          color: rgba(127, 173, 57, 1);
+        }
+      }
+
+      .orange {
+        &:hover {
+          color: rgba(204, 123, 26, 1);
+        }
+      }
     }
 
     &_catalog {
       font-weight: 500;
+
+      a {
+        &:hover {
+          color: rgba(127, 173, 57, 1);
+        }
+      }
+
+      .orange {
+        &:hover {
+          color: rgba(204, 123, 26, 1);
+        }
+      }
+
+      .red {
+        &:hover {
+          color: rgba(191, 111, 63, 1);
+        }
+      }
     }
 
     &_address {
@@ -61,5 +91,10 @@
       display: flex;
       justify-content: end;
     }
+  }
+}
+.orange {
+  &:hover {
+    color: rgba(204, 123, 26, 1);
   }
 }

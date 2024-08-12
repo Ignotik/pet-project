@@ -13,7 +13,7 @@ type AdvantagesProps = {
 };
 
 const Advantages: FC<AdvantagesProps> = ({ color, imageInfo }) => (
-  <div className={styles.advantagesContainer}>
+  <section className={styles.advantagesContainer}>
     <h2 className={styles.title}>НАШИ ПРИЕМУЩЕСТВА</h2>
     <div className={styles.card__container}>
       {imageInfo.map((item, index) => (
@@ -25,7 +25,7 @@ const Advantages: FC<AdvantagesProps> = ({ color, imageInfo }) => (
         />
       ))}
     </div>
-  </div>
+  </section>
 );
 
 export default Advantages;

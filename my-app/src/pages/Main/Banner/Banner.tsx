@@ -19,7 +19,7 @@ const Banner: React.FC = () => {
             в каталог
             <IoIosArrowForward className={styles.banner__container_arrow} />
           </Link>
-          <Button title="Заказать звонок" />
+          <Button width="block" color="green" title="Заказать звонок" />
         </div>
         <p className={styles.banner__container_text}>
           или связаться с нами через соц. сети
