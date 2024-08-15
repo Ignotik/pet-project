@@ -5,10 +5,11 @@ import Main from "../../pages/Main/Main";
 import Coal from "../../pages/ProductsInfo/Coal/Coal";
 import Sand from "../../pages/ProductsInfo/Sand/Sand";
 import Lamber from "../../pages/ProductsInfo/Lamber/Lamber";
+import Catalog from "../../pages/Catalog/Catalog";
 
 const routes = [
   { path: "/", element: <Main /> },
-  { path: "/catalog", element: <About /> },
+  { path: "/catalog", element: <Catalog /> },
   { path: "/contacts", element: <Contacts /> },
   { path: "/about", element: <About /> },
   { path: "/cart", element: <About /> },

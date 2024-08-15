@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import styles from "./About.module.scss";
@@ -34,7 +34,7 @@ const responsiveSettings = [
   },
 ];
 
-const About: React.FC = () => {
+const About: FC = () => {
   return (
     <>
       <div className={styles.about}>

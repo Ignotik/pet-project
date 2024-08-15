@@ -1,13 +1,14 @@
-import React from "react";
-import Banner from "./Banner/Banner";
-import LinkToCatalog from "./LinkToCatalog/LinkToCatalog";
-import QuestionForm from "../../components/layout/QuestionForm/QuestionForm";
-import Contacts from "../Contacts/Contacts";
-import About from "../About/About";
-import Advantages from "../../components/layout/Advantages/Advantages";
+import { FC } from "react";
+import {
+  Banner,
+  LinkToCatalog,
+  QuestionForm,
+  Advantages,
+} from "../../utils/consts/components";
+import { Contacts, About } from "../../utils/consts/pages";
 import { imageInfo } from "../../utils/consts/consts"; // Assuming imageInfo is correctly imported
 
-const Main: React.FC = () => {
+const Main: FC = () => {
   return (
     <>
       <Banner />
