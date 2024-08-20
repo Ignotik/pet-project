@@ -1,23 +1,38 @@
-import { FC } from "react";
-import { Button } from "../../../utils/consts/components";
+import React, { FC, useState } from "react";
+import { RootState, useAppDispatch } from "../../../redux/store/store";
+import { useSelector } from "react-redux";
+import { setFilterType } from "../../../redux/slices/filterSlice";
 import styles from "./Filters.module.scss";
+import Button from "../../../components/Button/Button";
 
 const Filters: FC = () => {
+  const dispatch = useAppDispatch();
+  const sortType = useSelector(
+    (state: RootState) => state.filter.sortType.type
+  );
+  const [sort, setSort] = useState("priceLow");
+
+  const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOption = e.target.value;
+    dispatch(setFilterType({ type: selectedOption }));
+  };
+
   return (
     <div className={styles.container}>
       <section className={styles.filter}>
         <h2 className={styles.title}>Фильтр</h2>
-        <select className={styles.select} name="filter">
+        <select
+          className={styles.select}
+          name="filter"
+          value={sortType}
+          onChange={handleFilterChange}
+        >
           <option value="coal">Уголь</option>
-          <option value="lamber">Пиломатериалы</option>
+          <option value="lumber">Пиломатериалы</option>
           <option value="sand">Песок</option>
-          <option value="cheb">Щебнь</option>
+          <option value="cheb">Щебень</option>
           <option value="chem">Цемент</option>
         </select>
-        <div className={styles.weight}>
-          <label htmlFor="weight">Вес</label>
-          <input type="text" name="input" id="weight" />
-        </div>
         <div className={styles.filter__price}>
           <label htmlFor="price">Цена</label>
           <input id="price" placeholder="от" type="text" />
@@ -25,11 +40,17 @@ const Filters: FC = () => {
         </div>
         <div className={styles.sort}>
           <label htmlFor="sort">Сортировка</label>
-          <select id="sort" className={styles.sort__select} name="filter">
+          <select
+            id="sort"
+            className={styles.sort__select}
+            name="sort"
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}
+          >
             <option value="priceLow">Цена (min-max)</option>
-            <option value="priceTop">Цена(max-min)</option>
-            <option value="weightLow">Вес(min-max)</option>
-            <option value="weightTop">Вес(max-min)</option>
+            <option value="priceTop">Цена (max-min)</option>
+            <option value="weightLow">Вес (min-max)</option>
+            <option value="weightTop">Вес (max-min)</option>
           </select>
         </div>
       </section>

@@ -1,12 +1,10 @@
-import { FC, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import {
-  fetchProducts,
-  fetchTotalCount,
-  limitPerPage,
-} from "../../../redux/slices/ProductsSlice";
+import React, { FC, useEffect, useState } from "react";
 import { RootState, useAppDispatch } from "../../../redux/store/store";
+import { useSelector } from "react-redux";
+import { fetchProducts } from "../../../redux/slices/productSlice";
 import styles from "./Products.module.scss";
+import Skeleton from "../../../components/Skeleton/Skeleton";
+import { BsCart2 } from "react-icons/bs";
 
 interface Product {
   id: number;
@@ -19,57 +17,69 @@ interface Product {
 const Products: FC = () => {
   const dispatch = useAppDispatch();
   const products = useSelector(
-    (state: RootState) => state.products.items as Product[]
+    (state: RootState) => state.product.products as Product[]
   );
-  const totalCount = useSelector(
-    (state: RootState) => state.products.totalCount
+  const totalPages = useSelector(
+    (state: RootState) => state.product.totalPages
   );
-  const [page, setPage] = useState(1);
+  const sortType = useSelector(
+    (state: RootState) => state.filter.sortType.type
+  );
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(fetchTotalCount());
-  }, [dispatch]);
+    const fetchProductsData = async () => {
+      try {
+        await dispatch(fetchProducts({ sortType, page: currentPage }));
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
 
-  useEffect(() => {
-    dispatch(fetchProducts(page));
-  }, [dispatch, page]);
+    fetchProductsData();
+  }, [currentPage, sortType, dispatch]);
 
-  useEffect(() => {
-    console.log("Total Count:", totalCount);
-    console.log("Total Pages:", Math.ceil(totalCount / limitPerPage));
-  }, [totalCount]);
-
-  const handlePageChange = (pageNumber: number) => {
-    setPage(pageNumber);
+  const handlePageChange = (page: number) => {
+    if (page > 0 && page <= totalPages) {
+      setCurrentPage(page);
+    }
   };
-
-  const totalPages = Math.ceil(totalCount / limitPerPage);
 
   return (
     <div className={styles.container}>
       <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            <section className={styles.card}>
-              <img src={product.img} alt={product.title} />
-              <p>{product.title}</p>
-              <button>
-                {product.price} <span>руб/т</span>
-              </button>
-            </section>
-          </li>
-        ))}
+        {isLoading
+          ? [...new Array(8)].map((_, index) => <Skeleton key={index} />)
+          : products.map((item) => (
+              <li key={item.id}>
+                <article className={styles.card}>
+                  <img src={item.img} alt={item.title} />
+                  <p>{item.title}</p>
+                  <button className={styles.button}>
+                    <p>
+                      {item.price} <span>руб/т</span>
+                    </p>
+                    <BsCart2 className={styles.button__cart} />
+                  </button>
+                </article>
+              </li>
+            ))}
       </ul>
       <div className={styles.pagination}>
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index + 1}
-            className={page === index + 1 ? styles.selected : ""}
-            onClick={() => handlePageChange(index + 1)}
-          >
-            {index + 1}
-          </button>
-        ))}
+        {[...Array(totalPages)].map((_, index) => {
+          const pageNumber = index + 1;
+          return (
+            <button
+              key={pageNumber}
+              className={currentPage === pageNumber ? styles.active : ""}
+              onClick={() => handlePageChange(pageNumber)}
+            >
+              {pageNumber}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
