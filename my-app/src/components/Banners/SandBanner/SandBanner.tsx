@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "./SandBanner.module.scss";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
-import Button from "../../../../components/Button/Button";
+import Button from "../../../components/Button/Button";
 
 const SandBanner: FC = () => {
   return (

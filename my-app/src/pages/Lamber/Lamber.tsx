@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { sandInfo } from "../../../utils/consts/consts";
-import { Contacts } from "../../../utils/consts/pages";
+import { sandInfo } from "../../utils/consts/consts";
+import { Contacts } from "../../utils/consts/pages";
 import {
   SecondHeader,
   QuestionForm,
@@ -8,8 +8,8 @@ import {
   DeliveryForm,
   LumberDelivery,
   Advantages,
-} from "../../../utils/consts/components";
-import delivery from "../../../assets/images/image 54.png";
+} from "../../utils/consts/components";
+import delivery from "../../assets/images/image 54.png";
 
 const Lamber: FC = () => {
   return (

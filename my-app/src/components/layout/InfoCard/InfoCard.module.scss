@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .orange {
@@ -45,8 +45,24 @@
 }
 
 .description {
-  font-size: 20.52px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 24.04px;
   text-align: center;
+}
+
+@media (max-width: 1181px) {
+  .card {
+    max-width: 242px;
+    max-height: 144px;
+    padding: 20px;
+  }
+  .description {
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+
+  .image {
+    max-width: 98px;
+  }
 }

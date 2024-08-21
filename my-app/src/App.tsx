@@ -14,7 +14,7 @@ function App() {
       {location.pathname !== "/coal" &&
         location.pathname !== "/sand" &&
         location.pathname !== "/lamber" && (
-          <SecondHeader color="green" colorText="default" />
+          <SecondHeader color="green" colorText="white" />
         )}
       {routing}
       {location.pathname !== "/coal" &&

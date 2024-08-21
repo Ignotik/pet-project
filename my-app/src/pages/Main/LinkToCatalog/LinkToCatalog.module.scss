@@ -31,3 +31,26 @@
     grid-area: 2 / 3 / 3 / 4;
   }
 }
+
+@media (max-width: 1181px) {
+  .container {
+    max-width: 1180px;
+
+    &_list {
+      padding: 0 120px;
+    }
+
+    &_link1 {
+      grid-area: 1 / 2 / 3 / 3;
+    }
+  }
+
+  .small__img {
+    max-width: 232px;
+  }
+
+  .big__img {
+    max-width: 450px;
+    height: 100%;
+  }
+}

@@ -1,10 +1,10 @@
 import { FC } from "react";
 import styles from "./LumberDelivery.module.scss";
-import Button from "../../../../components/Button/Button";
-import car from "../../../../assets/images/image 63 1.png";
-import lumber from "../../../../assets/images/image 62.png";
-import truck from "../../../../assets/images/image 64.png";
-import train from "../../../../assets/images/image 65.png";
+import Button from "../../../components/Button/Button";
+import car from "../../../assets/images/image 63 1.png";
+import lumber from "../../../assets/images/image 62.png";
+import truck from "../../../assets/images/image 64.png";
+import train from "../../../assets/images/image 65.png";
 
 const LumberDelivery: FC = () => {
   return (

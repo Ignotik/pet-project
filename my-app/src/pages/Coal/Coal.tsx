@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { coalInfo } from "../../../utils/consts/consts";
-import { Contacts } from "../../../utils/consts/pages";
+import { coalInfo } from "../../utils/consts/consts";
+import { Contacts } from "../../utils/consts/pages";
 import {
   SecondHeader,
   QuestionForm,
@@ -9,8 +9,8 @@ import {
   Advantages,
   CoalDelivery,
   CoalBanner,
-} from "../../../utils/consts/components";
-import delivery from "../../../assets/images/image 44.png";
+} from "../../utils/consts/components";
+import delivery from "../../assets/images/image 44.png";
 
 const Coal: FC = () => {
   return (

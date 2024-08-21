@@ -27,11 +27,34 @@ const initialState: ProductState = {
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProductsStatus",
-  async (args: { sortType: string; page?: number; limit?: number }) => {
-    const { sortType, page = 1, limit = 8 } = args;
-    const response = await axios.get(
-      `${apiUrl}?page=${page}&limit=${limit}&type=${sortType}`
-    );
+  async (args: {
+    sortType: string;
+    page?: number;
+    limit?: number;
+    sortList: string;
+    priceTo: number;
+    priceFrom: number;
+  }) => {
+    const {
+      sortType,
+      sortList,
+      page = 1,
+      limit = 8,
+      priceFrom,
+      priceTo,
+    } = args;
+
+    const params = {
+      "price[from]": priceFrom,
+      "price[to]": priceTo,
+      page,
+      limit,
+      type: sortType,
+      sortBy: sortList,
+    };
+
+    const response = await axios.get(`${apiUrl}`, { params });
+
     return {
       items: response.data.items,
       totalPages: response.data.meta.total_pages,

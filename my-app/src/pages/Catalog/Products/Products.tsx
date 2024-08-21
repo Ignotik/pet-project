@@ -22,16 +22,25 @@ const Products: FC = () => {
   const totalPages = useSelector(
     (state: RootState) => state.product.totalPages
   );
-  const sortType = useSelector(
-    (state: RootState) => state.filter.sortType.type
-  );
+  const sortType = useSelector((state: RootState) => state.filter.sortType);
+  const sortList = useSelector((state: RootState) => state.filter.sortList);
+  const priceFrom = useSelector((state: RootState) => state.filter.priceFrom);
+  const priceTo = useSelector((state: RootState) => state.filter.priceTo);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchProductsData = async () => {
       try {
-        await dispatch(fetchProducts({ sortType, page: currentPage }));
+        await dispatch(
+          fetchProducts({
+            sortType,
+            page: currentPage,
+            sortList,
+            priceTo,
+            priceFrom,
+          })
+        );
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -39,7 +48,7 @@ const Products: FC = () => {
     };
 
     fetchProductsData();
-  }, [currentPage, sortType, dispatch]);
+  }, [currentPage, sortType, sortList, dispatch, priceTo, priceFrom]);
 
   const handlePageChange = (page: number) => {
     if (page > 0 && page <= totalPages) {

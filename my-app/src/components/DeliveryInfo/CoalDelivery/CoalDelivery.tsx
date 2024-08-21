@@ -1,10 +1,10 @@
 import { FC } from "react";
 import styles from "./CoalDelivery.module.scss";
-import Button from "../../../../components/Button/Button";
-import car from "../../../../assets/images/image 56.png";
-import coal from "../../../../assets/images/image 55.png";
-import truck from "../../../../assets/images/image 45.png";
-import train from "../../../../assets/images/image 57.png";
+import Button from "../../Button/Button";
+import car from "../../../assets/images/image 56.png";
+import coal from "../../../assets/images/image 55.png";
+import truck from "../../../assets/images/image 45.png";
+import train from "../../../assets/images/image 57.png";
 
 const CoalDelivery: FC = () => {
   return (

@@ -41,9 +41,7 @@ const SecondHeader: React.FC<SecondHeaderProps> = ({ color, colorText }) => {
           <HiOutlineShoppingCart className={styles.nav__cart_icon} />
         </Link>
         <span className={styles.nav__cart_count}>0</span>
-        <span className={styles.nav__cart_summa}>
-          Сумма Товаров: {1000 + 1000}
-        </span>
+        <span className={styles.nav__cart_summa}>Товары: {1000 + 1000}</span>
       </div>
     </nav>
   );

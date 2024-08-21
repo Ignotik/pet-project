@@ -13,27 +13,27 @@ const LinkToCatalog: FC = () => {
       <ul className={styles.container_list}>
         <li className={styles.container_link1}>
           <Link to="/lamber">
-            <img src={pilo} alt="пиломатериалы" />
+            <img className={styles.big__img} src={pilo} alt="пиломатериалы" />
           </Link>
         </li>
         <li className={styles.container_link2}>
           <Link to="/coal">
-            <img src={coal} alt="уголь" />
+            <img className={styles.small__img} src={coal} alt="уголь" />
           </Link>
         </li>
         <li className={styles.container_link3}>
           <Link to="/sand">
-            <img src={cheb} alt="щебень" />
+            <img className={styles.small__img} src={cheb} alt="щебень" />
           </Link>
         </li>
         <li className={styles.container_link4}>
-          <Link to="/sand">
-            <img src={sand} alt="песок" />
+          <Link className={styles.small__img} to="/sand">
+            <img className={styles.small__img} src={sand} alt="песок" />
           </Link>
         </li>
         <li className={styles.container_link5}>
           <Link to="/sand">
-            <img src={chem} alt="цемент" />
+            <img className={styles.small__img} src={chem} alt="цемент" />
           </Link>
         </li>
       </ul>

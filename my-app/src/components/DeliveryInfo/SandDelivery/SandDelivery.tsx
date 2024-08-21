@@ -1,10 +1,10 @@
 import { FC } from "react";
 import styles from "./SandDelivery.module.scss";
-import Button from "../../../../components/Button/Button";
-import sand from "../../../../assets/images/image 58.png";
-import car from "../../../../assets/images/image 61.png";
-import trucks from "../../../../assets/images/image 59.png";
-import train from "../../../../assets/images/image 60.png";
+import Button from "../../../components/Button/Button";
+import sand from "../../../assets/images/image 58.png";
+import car from "../../../assets/images/image 61.png";
+import trucks from "../../../assets/images/image 59.png";
+import train from "../../../assets/images/image 60.png";
 
 const SandDelivery: FC = () => {
   return (

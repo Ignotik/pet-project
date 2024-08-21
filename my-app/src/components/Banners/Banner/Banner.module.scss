@@ -1,7 +1,12 @@
 .banner {
   max-width: 1920px;
   margin: 20px auto;
-  background-image: url("../../../assets/images/bg-banner.png");
+  background-image: linear-gradient(
+      360deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 126.88%
+    ),
+    url("../../../assets/images/bg-banner.png");
   background-repeat: no-repeat;
 
   &__container {
@@ -9,7 +14,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 145px 600px 31px;
+    box-sizing: border-box;
+    padding: 100px 600px;
     gap: 20px;
 
     &_inner {
@@ -72,6 +78,33 @@
       display: flex;
       gap: 40px;
       color: white;
+    }
+  }
+}
+
+@media (max-width: 1181px) and (min-width: 881px) {
+  .banner {
+    max-width: 1180px;
+
+    &__container {
+      padding: 40px 240px;
+
+      &_inner {
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .banner {
+    max-width: 880px;
+
+    &__container {
+      padding: 40px 190px;
     }
   }
 }

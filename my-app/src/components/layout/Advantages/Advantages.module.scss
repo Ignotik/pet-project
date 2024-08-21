@@ -18,3 +18,14 @@
   justify-content: center;
   gap: 40px 60px;
 }
+
+@media (max-width: 1181px) {
+  .advantagesContainer {
+    max-width: 1180px;
+    padding: 0 150px;
+  }
+
+  .card__container {
+    gap: 20px;
+  }
+}

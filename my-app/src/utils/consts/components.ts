@@ -4,20 +4,20 @@ import Footer from "../../components/layout/Footer/Footer";
 import QuestionForm from "../../components/layout/QuestionForm/QuestionForm";
 import DeliveryForm from "../../components/layout/DeliveryForm/DeliveryForm";
 import Advantages from "../../components/layout/Advantages/Advantages";
-import LumberDelivery from "../../pages/ProductsInfo/Lamber/LumberDelivery/LumberDelivery";
-import CoalBanner from "../../pages/ProductsInfo/Coal/CoalBanner/CoalBanner";
-import CoalDelivery from "../../pages/ProductsInfo/Coal/CoalDelivery/CoalDelivery";
-import SandBanner from "../../pages/ProductsInfo/Sand/SandBanner/SandBanner";
-import SandDelivery from "../../pages/ProductsInfo/Sand/SandDelivery/SandDelivery";
-import Banner from "../../pages/Main/Banner/Banner";
+import LumberDelivery from "../../components/DeliveryInfo/LumberDelivery/LumberDelivery";
+import CoalBanner from "../../components/Banners/CoalBanner/CoalBanner";
+import CoalDelivery from "../../components/DeliveryInfo/CoalDelivery/CoalDelivery";
+import SandBanner from "../../components/Banners/SandBanner/SandBanner";
+import SandDelivery from "../../components/DeliveryInfo/SandDelivery/SandDelivery";
+import Banner from "../../components/Banners/Banner/Banner";
 import LinkToCatalog from "../../pages/Main/LinkToCatalog/LinkToCatalog";
-import CatalogBanner from "../../pages/Catalog/CatalogBanner/CatalogBanner";
+import CatalogBanner from "../../components/Banners/CatalogBanner/CatalogBanner";
 import Filters from "../../pages/Catalog/Filters/Filters";
 export {
   Filters,
+  LinkToCatalog,
   SecondHeader,
   CatalogBanner,
-  LinkToCatalog,
   SandDelivery,
   SandBanner,
   Banner,
