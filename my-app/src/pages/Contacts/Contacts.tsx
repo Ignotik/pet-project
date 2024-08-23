@@ -23,8 +23,8 @@ const Contacts: FC = () => {
   return (
     <>
       <h2 className={styles.title}>КОНТАКТЫ</h2>
-      <div className={styles.contacts}>
-        <div className={styles.contacts__type}>
+      <section className={styles.contacts}>
+        <article className={styles.contacts__type}>
           {contacts.map((contact: Contact) => {
             return (
               <div className={styles.contacts__type_info} key={contact.id}>
@@ -39,8 +39,8 @@ const Contacts: FC = () => {
             <li>в ОАО «Банк Дабрабыт»</li>
             <li>BIC банка MMBNBY22</li>
           </ul>
-        </div>
-        <div className={styles.contacts__map}>
+        </article>
+        <article className={styles.contacts__map}>
           <img width="580" height="280" src={map} alt="Карта" />
           <ul className={styles.contacts__map_info}>
             <li>г.Минск, ул. Коммунистическая, 49</li>
@@ -50,8 +50,8 @@ const Contacts: FC = () => {
               Устава
             </li>
           </ul>
-        </div>
-      </div>
+        </article>
+      </section>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styles from "./QuestionForm.module.scss";
 import { Link } from "react-router-dom";
-import Button from "../../Button/Button";
+import Button from "../../../Button/Button";
 
 type QuestionFormProps = {
   color: string;

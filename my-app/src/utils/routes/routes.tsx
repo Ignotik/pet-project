@@ -7,6 +7,8 @@ import Sand from "../../pages/Sand/Sand";
 import Lamber from "../../pages/Lamber/Lamber";
 import Catalog from "../../pages/Catalog/Catalog";
 import Cart from "../../pages/Cart/Cart";
+import Register from "../../pages/register/Register";
+import Auth from "../../pages/auth/Auth";
 
 const routes = [
   { path: "/", element: <Main /> },
@@ -17,6 +19,8 @@ const routes = [
   { path: "/coal", element: <Coal /> },
   { path: "/sand", element: <Sand /> },
   { path: "/lamber", element: <Lamber /> },
+  { path: "/register", element: <Register /> },
+  { path: "/auth", element: <Auth /> },
   { path: "*", element: <Error /> },
 ];
 

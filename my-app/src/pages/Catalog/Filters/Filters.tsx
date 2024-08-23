@@ -69,7 +69,7 @@ const Filters: FC = () => {
 
   return (
     <div className={styles.container}>
-      <section className={styles.filter}>
+      <aside className={styles.filter}>
         <h2 className={styles.title}>Фильтр</h2>
         <select
           className={styles.select}
@@ -116,7 +116,7 @@ const Filters: FC = () => {
             ))}
           </select>
         </div>
-      </section>
+      </aside>
       <section className={styles.discount}>
         <article className={styles.discount__inner}>
           <h2 className={styles.discount__inner_title}>КАМЕННЫЙ УГОЛЬ</h2>

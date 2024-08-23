@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState, useAppDispatch } from "../../../redux/store/store";
+import { logout } from "../../../redux/slices/userSlice";
+import { IoExitOutline } from "react-icons/io5";
 import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
+  const user = useSelector((state: RootState) => state.user.user);
+  const loginStatus = useSelector((state: RootState) => state.user.loginStatus);
+  const dispatch = useAppDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
     <>
       <header className={styles.header}>
@@ -75,9 +85,24 @@ const Header: React.FC = () => {
               fill="#272E28"
             />
           </svg>
-          <Link to="/auth" className={styles.header__contacts_auth}>
-            Войти
-          </Link>
+          {loginStatus === "succeeded" && user ? (
+            <div className={styles.auth}>
+              {user.fullName}
+              <IoExitOutline
+                className={styles.auth__login}
+                onClick={handleLogout}
+              />
+            </div>
+          ) : (
+            <div className={styles.inner}>
+              <Link to="/register" className={styles.header__contacts_register}>
+                Зарегистрироваться
+              </Link>
+              <Link to="/auth" className={styles.header__contacts_auth}>
+                Войти
+              </Link>
+            </div>
+          )}
         </div>
       </header>
     </>

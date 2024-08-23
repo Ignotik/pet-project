@@ -1,0 +1,60 @@
+.register {
+  max-width: 1920px;
+  margin: 20px auto 60px;
+
+  &__form {
+    padding: 20px;
+    max-width: 480px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 24px 72px 0px rgba(142, 192, 67, 0.37);
+  }
+
+  &__input {
+    border: 1px solid rgba(39, 46, 40, 0.53);
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
+
+.title {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 32.81px;
+  letter-spacing: 0.05em;
+}
+
+.description {
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 26.95px;
+  text-align: center;
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.link {
+  padding: 12px 20px;
+  text-align: center;
+  border-radius: 10px;
+  background: linear-gradient(
+    75.29deg,
+    #7fad39 3.78%,
+    #b1d17f 52.27%,
+    #7fad39 103.26%
+  );
+  font-size: 20.17px;
+  font-weight: 800;
+  line-height: 23.64px;
+  letter-spacing: 0.05em;
+  color: white;
+}

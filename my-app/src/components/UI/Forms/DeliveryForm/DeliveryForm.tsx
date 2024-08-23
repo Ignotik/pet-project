@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./DeliveryForm.module.scss";
-import Button from "../../Button/Button";
+import Button from "../../../Button/Button";
 import { Link } from "react-router-dom";
 
 type DeliveryFormProps = {

@@ -8,8 +8,8 @@
 
   &__info {
     display: flex;
+    gap: 10px;
     align-items: center;
-    gap: 13px;
 
     &_work {
       display: flex;
@@ -50,16 +50,37 @@
     }
 
     &_auth {
-      font-size: 12px;
+      font-size: 18px;
       font-weight: 400;
       line-height: 14.06px;
       text-align: left;
       cursor: pointer;
-
-      &:visited {
-        color: rgba(127, 173, 57, 1);
-      }
+      color: black;
     }
+
+    &_register {
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 14.06px;
+      text-align: left;
+      cursor: pointer;
+      color: rgb(47, 232, 78);
+    }
+  }
+}
+
+.inner {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.auth {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  &__icon {
+    cursor: pointer;
   }
 }
 

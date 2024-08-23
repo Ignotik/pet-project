@@ -36,51 +36,49 @@ const responsiveSettings = [
 
 const About: FC = () => {
   return (
-    <>
-      <div className={styles.about}>
-        <div className={styles.about__info}>
-          <h2 className={styles.about__info_title}>О НАС</h2>
-          <div className={styles.about__info_inner}>
-            <div className={styles.about__info_description}>
-              <p>
-                Мы рады вас видеть на нашем официальном сайте ООО
-                &laquo;ПромСтройСнаб&raquo;. Наша компания занимается продажей
-                Пиломатериала, Угля, Щебня, Цемента, Песка высокого качества по
-                Кемеровской области.
-              </p>
-              <p>
-                В частности, осуществляем оптовые поставки щебня, песка, отсева,
-                и прочего сырья на объекты в Ленинске-Кузнецком и Кемеровской
-                области.
-              </p>
-              <p>
-                Ведем активное сотрудничество с производственными, строительными
-                и дорожными фирмами, а также, с бетонными заводами и другими
-                организациями.
-              </p>
-            </div>
-            <img src={about6} alt="Фотография погрузки" />
+    <section className={styles.about}>
+      <div className={styles.about__info}>
+        <h2 className={styles.about__info_title}>О НАС</h2>
+        <article className={styles.about__info_inner}>
+          <div className={styles.about__info_description}>
+            <p>
+              Мы рады вас видеть на нашем официальном сайте ООО
+              &laquo;ПромСтройСнаб&raquo;. Наша компания занимается продажей
+              Пиломатериала, Угля, Щебня, Цемента, Песка высокого качества по
+              Кемеровской области.
+            </p>
+            <p>
+              В частности, осуществляем оптовые поставки щебня, песка, отсева, и
+              прочего сырья на объекты в Ленинске-Кузнецком и Кемеровской
+              области.
+            </p>
+            <p>
+              Ведем активное сотрудничество с производственными, строительными и
+              дорожными фирмами, а также, с бетонными заводами и другими
+              организациями.
+            </p>
           </div>
-        </div>
-        <h2 className={styles.about__slider_title}>Наши фотографии</h2>
-        <Slide
-          slidesToScroll={1}
-          slidesToShow={1}
-          indicators={true}
-          responsive={responsiveSettings}
-        >
-          {slideImages.map((slideImage, index) => (
-            <div className={styles.slider} key={index}>
-              <img
-                className={styles.slider__img}
-                src={slideImage.url}
-                alt="Картинка"
-              />
-            </div>
-          ))}
-        </Slide>
+          <img src={about6} alt="Фотография погрузки" />
+        </article>
       </div>
-    </>
+      <h2 className={styles.about__slider_title}>Наши фотографии</h2>
+      <Slide
+        slidesToScroll={1}
+        slidesToShow={1}
+        indicators={true}
+        responsive={responsiveSettings}
+      >
+        {slideImages.map((slideImage, index) => (
+          <div className={styles.slider} key={index}>
+            <img
+              className={styles.slider__img}
+              src={slideImage.url}
+              alt="Картинка"
+            />
+          </div>
+        ))}
+      </Slide>
+    </section>
   );
 };
 
