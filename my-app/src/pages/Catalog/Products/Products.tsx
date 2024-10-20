@@ -5,6 +5,7 @@ import { fetchProducts } from "../../../redux/slices/productSlice";
 import styles from "./Products.module.scss";
 import Skeleton from "../../../components/Skeleton/Skeleton";
 import { BsCart2 } from "react-icons/bs";
+import { addItem } from "../../../redux/slices/cartSlice";
 
 interface Product {
   id: number;
@@ -12,6 +13,7 @@ interface Product {
   price: number;
   type: string;
   img: string;
+  count: number;
 }
 
 const Products: FC = () => {
@@ -57,7 +59,7 @@ const Products: FC = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <ul>
         {isLoading
           ? [...new Array(8)].map((_, index) => <Skeleton key={index} />)
@@ -66,7 +68,10 @@ const Products: FC = () => {
                 <article className={styles.card}>
                   <img src={item.img} alt={item.title} />
                   <p>{item.title}</p>
-                  <button className={styles.button}>
+                  <button
+                    onClick={() => dispatch(addItem(item))}
+                    className={styles.button}
+                  >
                     <p>
                       {item.price} <span>руб/т</span>
                     </p>
@@ -90,7 +95,7 @@ const Products: FC = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

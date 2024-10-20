@@ -9,7 +9,7 @@ import chem from "../../../assets/images/chem.png";
 
 const LinkToCatalog: FC = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <ul className={styles.container_list}>
         <li className={styles.container_link1}>
           <Link to="/lamber">
@@ -37,7 +37,7 @@ const LinkToCatalog: FC = () => {
           </Link>
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
 

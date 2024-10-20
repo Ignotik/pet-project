@@ -3,9 +3,9 @@ import styles from "./CatalogBanner.module.scss";
 
 const CatalogBanner: FC = () => {
   return (
-    <div className={styles.banner}>
+    <section className={styles.banner}>
       <h2 className={styles.title}>КАТАЛОГ</h2>
-    </div>
+    </section>
   );
 };
 

@@ -1,21 +1,16 @@
-import { FC } from "react";
-import styles from "./QuestionForm.module.scss";
-import { Link } from "react-router-dom";
+import React from "react";
 import Button from "../../../Button/Button";
+import styles from "./CartForm.module.scss";
+import { Link } from "react-router-dom";
 
-type QuestionFormProps = {
-  color: string;
-  width: string;
-};
-
-const QuestionForm: FC<QuestionFormProps> = ({ color, width }) => {
+const CartForm: React.FC = () => {
   return (
-    <section className={styles.QuestionForm}>
-      <div className={styles.QuestionForm__content}>
-        <h2 className={styles.QuestionForm__content_title}>
-          Уточните любую информацию, заказав обратный звонок
+    <section className={styles.CartForm}>
+      <div className={styles.CartForm__content}>
+        <h2 className={styles.CartForm__content_title}>
+          Чтобы оформить заказ, заполните поля для связи с вами
         </h2>
-        <div className={styles.QuestionForm__content_inner}>
+        <div className={styles.CartForm__content_inner}>
           <form className={styles.form}>
             <input
               className={styles.form__input}
@@ -29,8 +24,8 @@ const QuestionForm: FC<QuestionFormProps> = ({ color, width }) => {
             />
             <input
               className={styles.form__input}
-              type="email"
-              placeholder="Ваш email"
+              type="text"
+              placeholder="Адрес доставки"
             />
             <div className={styles.form__input_info}>
               <input
@@ -44,9 +39,8 @@ const QuestionForm: FC<QuestionFormProps> = ({ color, width }) => {
               </label>
             </div>
           </form>
-          <div className={styles.QuestionForm__content_callcenter}>
+          <div className={styles.CartForm__content_callcenter}>
             <svg
-              className={styles[color]}
               width="303"
               height="212"
               viewBox="0 0 303 212"
@@ -74,7 +68,7 @@ const QuestionForm: FC<QuestionFormProps> = ({ color, width }) => {
                 </linearGradient>
               </defs>
             </svg>
-            <Button width={width} title="отправить" color={color} />
+            <Button width="full" title="отправить" color="green" />
           </div>
         </div>
       </div>
@@ -82,4 +76,4 @@ const QuestionForm: FC<QuestionFormProps> = ({ color, width }) => {
   );
 };
 
-export default QuestionForm;
+export default CartForm;

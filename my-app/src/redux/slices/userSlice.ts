@@ -1,4 +1,3 @@
-// src/slices/authSlice.ts
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -18,7 +17,7 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  user: null,
+  user: JSON.parse(localStorage.getItem("user") || "null"),
   token: localStorage.getItem("token") || null,
   registerStatus: "idle",
   loginStatus: "idle",
@@ -32,11 +31,7 @@ export const registerUser = createAsyncThunk(
     const response = await axios.post(
       "https://9303851354d5e8f0.mokky.dev/register",
       userData,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+      { headers: { "Content-Type": "application/json" } }
     );
     return response.data;
   }
@@ -48,11 +43,7 @@ export const loginUser = createAsyncThunk(
     const response = await axios.post(
       "https://9303851354d5e8f0.mokky.dev/auth",
       credentials,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+      { headers: { "Content-Type": "application/json" } }
     );
     return response.data;
   }
@@ -61,14 +52,9 @@ export const loginUser = createAsyncThunk(
 export const fetchCurrentUser = createAsyncThunk(
   "auth/fetchCurrentUser",
   async (token: string) => {
-    console.log("Fetching current user with token:", token);
     const response = await axios.get(
       "https://9303851354d5e8f0.mokky.dev/auth_me",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
+      { headers: { Authorization: `Bearer ${token}` } }
     );
     return response.data;
   }
@@ -85,6 +71,7 @@ const userSlice = createSlice({
       state.loginStatus = "idle";
       state.fetchStatus = "idle";
       state.error = null;
+      localStorage.removeItem("user");
       localStorage.removeItem("token");
     },
     clearUserState: (state) => {
@@ -104,12 +91,13 @@ const userSlice = createSlice({
         state.user = action.payload.data;
         state.token = action.payload.token;
         state.registerStatus = "succeeded";
+        localStorage.setItem("user", JSON.stringify(action.payload.data));
+        localStorage.setItem("token", action.payload.token);
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.registerStatus = "failed";
         state.error = action.error.message || null;
       })
-
       .addCase(loginUser.pending, (state) => {
         state.loginStatus = "loading";
       })
@@ -117,13 +105,13 @@ const userSlice = createSlice({
         state.user = action.payload.data;
         state.token = action.payload.token;
         state.loginStatus = "succeeded";
+        localStorage.setItem("user", JSON.stringify(action.payload.data));
         localStorage.setItem("token", action.payload.token);
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loginStatus = "failed";
         state.error = action.error.message || null;
       })
-
       .addCase(fetchCurrentUser.pending, (state) => {
         state.fetchStatus = "loading";
       })
@@ -138,13 +126,5 @@ const userSlice = createSlice({
   },
 });
 
-export const initializeAuth = () => async (dispatch: any) => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    await dispatch(fetchCurrentUser(token));
-  }
-};
-
 export const { logout, clearUserState } = userSlice.actions;
-
 export default userSlice.reducer;

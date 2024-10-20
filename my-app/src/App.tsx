@@ -2,28 +2,31 @@ import { useLocation, useRoutes } from "react-router-dom";
 import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 import routes from "./utils/routes/routes";
-import SecondHeader from "./components/layout/Header/SecondHeader";
-import { useAppDispatch } from "./redux/store/store";
+import { RootState, useAppDispatch } from "./redux/store/store";
 import { useEffect } from "react";
-import { initializeAuth } from "./redux/slices/userSlice";
+import { fetchCurrentUser } from "./redux/slices/userSlice";
+import { useSelector } from "react-redux";
 
 function App() {
   const location = useLocation();
   const routing = useRoutes(routes);
   const dispatch = useAppDispatch();
+  const token = localStorage.getItem("token");
+  const user = useSelector((state: RootState) => state.user.user);
 
   useEffect(() => {
-    console.log("Dispatching initializeAuth");
-    dispatch(initializeAuth());
-  }, [dispatch]);
+    if (token && !user) {
+      dispatch(fetchCurrentUser(token));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token]);
 
   return (
     <>
-      <Header />
       {location.pathname !== "/coal" &&
         location.pathname !== "/sand" &&
         location.pathname !== "/lamber" && (
-          <SecondHeader color="green" colorText="white" />
+          <Header color="green" colorText="default" />
         )}
       {routing}
       {location.pathname !== "/coal" &&

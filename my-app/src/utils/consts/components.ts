@@ -1,4 +1,3 @@
-import SecondHeader from "../../components/layout/Header/SecondHeader";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/layout/Footer/Footer";
 import QuestionForm from "../../components/UI/Forms/QuestionForm/QuestionForm";
@@ -16,7 +15,6 @@ import Filters from "../../pages/Catalog/Filters/Filters";
 export {
   Filters,
   LinkToCatalog,
-  SecondHeader,
   CatalogBanner,
   SandDelivery,
   SandBanner,

@@ -2,7 +2,6 @@ import { FC } from "react";
 import { sandInfo } from "../../utils/consts/consts";
 import { Contacts } from "../../utils/consts/pages";
 import {
-  SecondHeader,
   QuestionForm,
   Footer,
   DeliveryForm,
@@ -11,11 +10,12 @@ import {
   Advantages,
 } from "../../utils/consts/components";
 import delivery from "../../assets/images/image 21.png";
+import Header from "../../components/layout/Header/Header";
 
 const Sand: FC = () => {
   return (
     <>
-      <SecondHeader color="orange" colorText="white" />;
+      <Header color="orange" colorText="white" />;
       <SandBanner />
       <Advantages color="orange" imageInfo={sandInfo} />
       <SandDelivery />

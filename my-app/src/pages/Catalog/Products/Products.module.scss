@@ -7,7 +7,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 20px 370px;
+    margin: 0 auto;
+    max-width: 1020px;
   }
 }
 
@@ -16,8 +17,7 @@
   box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   padding: 16px;
-  max-width: 280px;
-  max-height: 428px;
+  max-width: 240px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@
     cursor: pointer;
 
     p {
-      font-size: 26.57px;
+      font-size: 22px;
       font-weight: 800;
       line-height: 31.14px;
       letter-spacing: 0.05em;
@@ -94,5 +94,56 @@
   .active {
     background: rgba(127, 173, 57, 1);
     color: white;
+  }
+}
+
+@media (max-width: 1760px) {
+  .card {
+    max-width: 220px;
+
+    .button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(127, 173, 57, 1);
+      padding: 12px 24px;
+      color: white;
+      border: none;
+      cursor: pointer;
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .container {
+    ul {
+      max-width: 940px;
+    }
+  }
+}
+
+@media (max-width: 1420px) {
+  .container {
+    ul {
+      max-width: 700px;
+    }
+  }
+}
+
+@media (max-width: 1180px) {
+  .container {
+    ul {
+      max-width: 460px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    ul {
+      max-width: 220px;
+    }
   }
 }

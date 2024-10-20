@@ -59,63 +59,77 @@ const Filters: FC = () => {
     } else if (actionType === "sort") {
       dispatch(setSortList(value));
     } else if (actionType === "priceFrom") {
-      setLocalPriceFrom(Number(value)); // Обновляем локальное состояние
-      debouncedSetPriceFrom(Number(value)); // Отправляем данные через 1 сек
+      setLocalPriceFrom(Number(value));
+      debouncedSetPriceFrom(Number(value));
     } else if (actionType === "priceTo") {
-      setLocalPriceTo(Number(value)); // Обновляем локальное состояние
-      debouncedSetPriceTo(Number(value)); // Отправляем данные через 1 сек
+      setLocalPriceTo(Number(value));
+      debouncedSetPriceTo(Number(value));
     }
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <aside className={styles.filter}>
         <h2 className={styles.title}>Фильтр</h2>
-        <select
-          className={styles.select}
-          name="filter"
-          value={sortType}
-          onChange={(e) => handleChange(e, "filter")}
-        >
-          {filterOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        <div className={styles.filter__price}>
-          <label htmlFor="price">Цена</label>
-          <input
-            id="priceFrom"
-            placeholder="от"
-            type="number"
-            value={localPriceFrom}
-            onChange={(e) => handleChange(e, "priceFrom")}
-          />
-          <input
-            id="priceTo"
-            placeholder="до"
-            type="number"
-            value={localPriceTo}
-            onChange={(e) => handleChange(e, "priceTo")}
-          />
-        </div>
-        <div className={styles.sort}>
-          <label htmlFor="sort">Сортировка</label>
-          <select
-            id="sort"
-            className={styles.sort__select}
-            name="sort"
-            value={sortList}
-            onChange={(e) => handleChange(e, "sort")}
-          >
-            {sortOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
+        <section className={styles.filter__container}>
+          <article>
+            <select
+              className={styles.select}
+              name="filter"
+              value={sortType}
+              onChange={(e) => handleChange(e, "filter")}
+            >
+              {filterOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <div className={styles.filter__price}>
+              <label htmlFor="price">Цена</label>
+              <input
+                id="priceFrom"
+                placeholder="от"
+                type="number"
+                value={localPriceFrom}
+                min={1}
+                max={10000}
+                onChange={(e) => handleChange(e, "priceFrom")}
+              />
+              <input
+                id="priceTo"
+                placeholder="до"
+                type="number"
+                value={localPriceTo}
+                min={1}
+                max={10000}
+                onChange={(e) => handleChange(e, "priceTo")}
+              />
+            </div>
+          </article>
+          <article>
+            <div className={styles.filter__price}>
+              <label htmlFor="price">Вес</label>
+              <input placeholder="Вес" type="text" />
+            </div>
+            <div className={styles.sort}>
+              <label htmlFor="sort">Сортировка</label>
+              <select
+                id="sort"
+                className={styles.sort__select}
+                name="sort"
+                value={sortList}
+                onChange={(e) => handleChange(e, "sort")}
+              >
+                {sortOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </article>
+        </section>
       </aside>
       <section className={styles.discount}>
         <article className={styles.discount__inner}>
@@ -130,7 +144,7 @@ const Filters: FC = () => {
           <Button width="block" color="green" title="купить сейчас" />
         </article>
       </section>
-    </div>
+    </section>
   );
 };
 

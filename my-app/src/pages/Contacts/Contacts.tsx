@@ -21,15 +21,15 @@ const contacts: Contact[] = [
 
 const Contacts: FC = () => {
   return (
-    <>
+    <section>
       <h2 className={styles.title}>КОНТАКТЫ</h2>
       <section className={styles.contacts}>
         <article className={styles.contacts__type}>
           {contacts.map((contact: Contact) => {
             return (
-              <div className={styles.contacts__type_info} key={contact.id}>
-                <p>{contact.description}</p>
-              </div>
+              <p className={styles.contacts__type_info} key={contact.id}>
+                {contact.description}
+              </p>
             );
           })}
           <ul className={styles.contacts__type_list}>
@@ -52,7 +52,7 @@ const Contacts: FC = () => {
           </ul>
         </article>
       </section>
-    </>
+    </section>
   );
 };
 

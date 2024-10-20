@@ -1,38 +1,7 @@
 import { FC } from "react";
-import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import styles from "./About.module.scss";
-import about1 from "../../assets/images/about1.png";
-import about2 from "../../assets/images/about2.png";
-import about3 from "../../assets/images/about3.png";
-import about4 from "../../assets/images/about4.jpg";
-import about5 from "../../assets/images/about5.jpg";
 import about6 from "../../assets/images/about6.png";
-
-const slideImages = [
-  { url: about1 },
-  { url: about2 },
-  { url: about3 },
-  { url: about4 },
-  { url: about5 },
-];
-
-const responsiveSettings = [
-  {
-    breakpoint: 800,
-    settings: {
-      slidesToShow: 3,
-      slidesToScroll: 2,
-    },
-  },
-  {
-    breakpoint: 500,
-    settings: {
-      slidesToShow: 2,
-      slidesToScroll: 2,
-    },
-  },
-];
 
 const About: FC = () => {
   return (
@@ -61,23 +30,6 @@ const About: FC = () => {
           <img src={about6} alt="Фотография погрузки" />
         </article>
       </div>
-      <h2 className={styles.about__slider_title}>Наши фотографии</h2>
-      <Slide
-        slidesToScroll={1}
-        slidesToShow={1}
-        indicators={true}
-        responsive={responsiveSettings}
-      >
-        {slideImages.map((slideImage, index) => (
-          <div className={styles.slider} key={index}>
-            <img
-              className={styles.slider__img}
-              src={slideImage.url}
-              alt="Картинка"
-            />
-          </div>
-        ))}
-      </Slide>
     </section>
   );
 };

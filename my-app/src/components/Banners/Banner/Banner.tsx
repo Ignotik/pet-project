@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const Banner: React.FC = () => {
   return (
-    <div className={styles.banner}>
+    <section className={styles.banner}>
       <div className={styles.banner__container}>
         <h2 className={styles.banner__container_title}>
           Пиломатериалы Уголь Щебень Цемент Песок
@@ -69,7 +69,7 @@ const Banner: React.FC = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,0 +1,89 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  &__input {
+    border: 1px solid rgba(39, 46, 40, 0.53);
+    padding: 20px;
+    border-radius: 10px;
+
+    &_checkbox {
+      cursor: pointer;
+    }
+
+    &_info {
+      display: flex;
+      gap: 20px;
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    &::placeholder {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 19.92px;
+      text-align: left;
+      color: rgba(39, 46, 40, 0.53);
+    }
+  }
+}
+.CartForm {
+  max-width: 1920px;
+  margin: 0 auto;
+  margin-top: 100px;
+
+  &__content {
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(219, 219, 219, 1);
+    box-shadow: 0px 24px 72px 0px rgba(142, 192, 67, 0.37);
+    display: flex;
+    flex-direction: column;
+    margin: 30px 430px;
+    padding: 44px;
+    border-radius: 20px;
+
+    &_callcenter {
+      gap: 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &_title {
+      text-align: center;
+      font-size: 23px;
+      font-weight: 500;
+      line-height: 26.95px;
+      margin-bottom: 36px;
+    }
+
+    &_inner {
+      display: flex;
+      gap: 100px;
+    }
+
+    &_button {
+      background: rgba(127, 173, 57, 1);
+      color: white;
+      border-radius: 10px;
+      padding: 12px 157px;
+      font-size: 20.17px;
+      font-weight: 800;
+      line-height: 23.64px;
+      letter-spacing: 0.05em;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.5s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+.green {
+  background: rgba(127, 173, 57, 1);
+}

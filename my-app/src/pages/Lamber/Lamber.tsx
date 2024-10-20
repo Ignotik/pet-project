@@ -2,7 +2,6 @@ import { FC } from "react";
 import { sandInfo } from "../../utils/consts/consts";
 import { Contacts } from "../../utils/consts/pages";
 import {
-  SecondHeader,
   QuestionForm,
   Footer,
   DeliveryForm,
@@ -10,11 +9,12 @@ import {
   Advantages,
 } from "../../utils/consts/components";
 import delivery from "../../assets/images/image 54.png";
+import Header from "../../components/layout/Header/Header";
 
 const Lamber: FC = () => {
   return (
     <>
-      <SecondHeader color="red" colorText="white" />
+      <Header color="red" colorText="white" />
       <Advantages color="red" imageInfo={sandInfo} />
       <LumberDelivery />
       <DeliveryForm

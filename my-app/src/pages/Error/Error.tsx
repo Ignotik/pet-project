@@ -4,7 +4,7 @@ import styles from "./Error.module.scss";
 const Error: FC = () => {
   return (
     <>
-      <div className={styles.error}>Упс...Такой страницы нет</div>;
+      <section className={styles.error}>Упс...Такой страницы нет</section>;
     </>
   );
 };

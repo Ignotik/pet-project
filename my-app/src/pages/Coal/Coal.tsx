@@ -2,7 +2,6 @@ import { FC } from "react";
 import { coalInfo } from "../../utils/consts/consts";
 import { Contacts } from "../../utils/consts/pages";
 import {
-  SecondHeader,
   QuestionForm,
   Footer,
   DeliveryForm,
@@ -11,11 +10,12 @@ import {
   CoalBanner,
 } from "../../utils/consts/components";
 import delivery from "../../assets/images/image 44.png";
+import Header from "../../components/layout/Header/Header";
 
 const Coal: FC = () => {
   return (
     <>
-      <SecondHeader color="black" colorText="white" />
+      <Header color="black" colorText="white" />
       <CoalBanner />
       <Advantages color="black" imageInfo={coalInfo} />
       <CoalDelivery />

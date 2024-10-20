@@ -9,56 +9,58 @@ type FooterProps = {
 const Footer: React.FC<FooterProps> = ({ color }) => {
   return (
     <footer className={styles.footer}>
-      <ul className={styles.footer__list}>
-        <li className={styles.footer__list_nav}>
-          <Link className={styles[color]} to="/">
-            Главная
-          </Link>
-        </li>
-        <li className={styles.footer__list_nav}>
-          <Link className={styles[color]} to="/catalog">
-            Каталог
-          </Link>
-        </li>
-        <li className={styles.footer__list_nav}>
-          <Link className={styles[color]} to="/contacts">
-            Контакты
-          </Link>
-        </li>
-        <li className={styles.footer__list_nav}>
-          <Link className={styles[color]} to="/about">
-            О нас
-          </Link>
-        </li>
-      </ul>
-      <ul className={styles.footer__list}>
-        <li className={styles.footer__list_catalog}>
-          <Link className={styles[color]} to="/rubble">
-            Щебень
-          </Link>
-        </li>
-        <li className={styles.footer__list_catalog}>
-          <Link className={styles[color]} to="/sand">
-            Песок
-          </Link>
-        </li>
-        <li className={styles.footer__list_catalog}>
-          <Link className={styles[color]} to="/cement">
-            Цемент
-          </Link>
-        </li>
-        <li className={styles.footer__list_catalog}>
-          <Link className={styles[color]} to="/coal">
-            Уголь
-          </Link>
-        </li>
-        <li className={styles.footer__list_catalog}>
-          <Link className={styles[color]} to="/lumber">
-            Пиломатериалы
-          </Link>
-        </li>
-      </ul>
-      <ul className={styles.footer__list}>
+      <article>
+        <ul className={styles.footer__list}>
+          <li className={styles.footer__list_nav}>
+            <Link className={styles[color]} to="/">
+              Главная
+            </Link>
+          </li>
+          <li className={styles.footer__list_nav}>
+            <Link className={styles[color]} to="/catalog">
+              Каталог
+            </Link>
+          </li>
+          <li className={styles.footer__list_nav}>
+            <Link className={styles[color]} to="/contacts">
+              Контакты
+            </Link>
+          </li>
+          <li className={styles.footer__list_nav}>
+            <Link className={styles[color]} to="/about">
+              О нас
+            </Link>
+          </li>
+        </ul>
+        <ul className={styles.footer__list}>
+          <li className={styles.footer__list_catalog}>
+            <Link className={styles[color]} to="/rubble">
+              Щебень
+            </Link>
+          </li>
+          <li className={styles.footer__list_catalog}>
+            <Link className={styles[color]} to="/sand">
+              Песок
+            </Link>
+          </li>
+          <li className={styles.footer__list_catalog}>
+            <Link className={styles[color]} to="/cement">
+              Цемент
+            </Link>
+          </li>
+          <li className={styles.footer__list_catalog}>
+            <Link className={styles[color]} to="/coal">
+              Уголь
+            </Link>
+          </li>
+          <li className={styles.footer__list_catalog}>
+            <Link className={styles[color]} to="/lumber">
+              Пиломатериалы
+            </Link>
+          </li>
+        </ul>
+      </article>
+      <ul className={styles.footer__list_info}>
         <li className={styles.footer__list_address}>
           <p>101000, г. Москва, ул. Мясницкая 24/7, стр. 3, этаж 3, оф. 322</p>
           <svg

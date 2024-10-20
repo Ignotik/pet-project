@@ -2,18 +2,43 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../../redux/store/store";
 import { logout } from "../../../redux/slices/userSlice";
-import { IoExitOutline } from "react-icons/io5";
+import { IoCloseOutline, IoExitOutline, IoMenuOutline } from "react-icons/io5";
 import styles from "./Header.module.scss";
+import classNames from "classnames";
+import { HiOutlineShoppingCart } from "react-icons/hi2";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import { useState } from "react";
 
-const Header: React.FC = () => {
+type SecondHeaderProps = {
+  color: string;
+  colorText: string;
+};
+
+const Header: React.FC<SecondHeaderProps> = ({ color, colorText }) => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const { totalPrice, items } = useSelector((state: RootState) => state.cart);
   const user = useSelector((state: RootState) => state.user.user);
   const loginStatus = useSelector((state: RootState) => state.user.loginStatus);
   const dispatch = useAppDispatch();
+
+  const secondHeaderClass = classNames({
+    [styles.nav]: true,
+    [styles[color]]: true,
+  });
+  const LinkClass = classNames({
+    [styles.nav__info_link]: true,
+    [styles[colorText]]: true,
+  });
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   const handleLogout = () => {
     dispatch(logout());
   };
   return (
-    <>
+    <section>
       <header className={styles.header}>
         <div className={styles.header__info}>
           <svg
@@ -89,23 +114,69 @@ const Header: React.FC = () => {
             <div className={styles.auth}>
               {user.fullName}
               <IoExitOutline
-                className={styles.auth__login}
+                className={styles.auth__logout}
                 onClick={handleLogout}
               />
             </div>
           ) : (
             <div className={styles.inner}>
-              <Link to="/register" className={styles.header__contacts_register}>
-                Зарегистрироваться
-              </Link>
               <Link to="/auth" className={styles.header__contacts_auth}>
                 Войти
+              </Link>
+              <Link to="/register" className={styles.header__contacts_register}>
+                Зарегистрироваться
               </Link>
             </div>
           )}
         </div>
       </header>
-    </>
+      <nav className={secondHeaderClass}>
+        <div className={styles.header__toggle}>
+          <span onClick={toggleMenu}>
+            {isMenuOpen ? (
+              <IoCloseOutline />
+            ) : (
+              <IoMenuOutline className={styles.nav__info_icon} />
+            )}
+          </span>
+        </div>
+        <div>
+          <Link to="/">
+            <h1>ПромТрансСнаб</h1>
+          </Link>
+        </div>
+        {isMenuOpen && (
+          <div
+            className={classNames(styles.burger_menu, {
+              [styles.burger_menu_open]: isMenuOpen,
+            })}
+          >
+            <BurgerMenu />
+          </div>
+        )}
+        <div className={styles.nav__info}>
+          <Link className={LinkClass} to="/">
+            Главная
+          </Link>
+          <Link className={LinkClass} to="/catalog">
+            Каталог
+          </Link>
+          <Link className={LinkClass} to="/contacts">
+            Контакты
+          </Link>
+          <Link className={LinkClass} to="/about">
+            О нас
+          </Link>
+        </div>
+        <div className={styles.nav__cart}>
+          <Link className={LinkClass} to="/cart">
+            <HiOutlineShoppingCart className={styles.icon} />
+          </Link>
+          <span className={styles.nav__cart_count}>{items.length}</span>
+          <span className={styles.nav__cart_summa}>Товары: {totalPrice}</span>
+        </div>
+      </nav>
+    </section>
   );
 };
 
